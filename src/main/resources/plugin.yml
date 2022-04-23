@@ -1,0 +1,4 @@
+name: PoppyExplosionPlugin
+version: '${version}'
+main: dev.cmccall.poppyexplosionplugin.PoppyExplosionPlugin
+api-version: 1.18
