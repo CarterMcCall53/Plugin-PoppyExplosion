@@ -14,7 +14,6 @@ public class Events implements Listener {
             if (block == Material.POPPY) {
                 var numGen = Math.random() * 100;
                 int num = (int) numGen;
-                System.out.println(num);
                 if (num == 1) {
                     var loc = e.getClickedBlock().getLocation();
                     var locX = e.getClickedBlock().getX();
