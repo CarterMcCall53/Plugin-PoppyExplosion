@@ -38,7 +38,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 jar {
-    destinationDirectory.set(file("C:\\Users\\Carte\\OneDrive\\Desktop\\Plugin Test Server\\plugins"))
+    destinationDirectory.set(file("C:\\Users\\Carte\\Desktop\\Plugin Test Server\\plugins"))
 }
 
 processResources {
