@@ -16,11 +16,20 @@ public class Events implements Listener {
                 int num = (int) numGen;
                 if (num == 1) {
                     var loc = e.getClickedBlock().getLocation();
-                    var locX = e.getClickedBlock().getX();
-                    var locy = e.getClickedBlock().getY();
-                    var locZ = e.getClickedBlock().getZ();
-                    var locY = locy - 1;
                     e.getPlayer().getWorld().createExplosion(loc, 5f);
+                    e.setCancelled(true);
+                    var world = e.getPlayer().getWorld();
+                    var locX = e.getClickedBlock().getX();
+                    var yloc = e.getClickedBlock().getY();
+                    var locZ = e.getClickedBlock().getZ();
+                    var locY = yloc - 1;
+                    for (int y = yloc - 2; y > -65; y--) {
+                        if (world.getType(locX, y, locZ) != Material.AIR) {
+                            e.getPlayer().getWorld().setType(locX, y, locZ, Material.GRASS_BLOCK);
+                            e.getPlayer().getWorld().setType(locX, y+1, locZ, Material.WITHER_ROSE);
+                            break;
+                        }
+                    }
                 }
             }
         }
